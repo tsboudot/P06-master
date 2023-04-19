@@ -1,27 +1,39 @@
+import {genererFiltres} from './filters.js';
+
 export function genererWorks(works = []) {
-    
-    
     const portfolioSection = document.querySelector('#portfolio');
     portfolioSection.innerHTML = '';
-
-    works.forEach(work => {
+  
+    if (works.length === 0) {
+      portfolioSection.style.display = 'none';
+    } else {
+      portfolioSection.style.display = '';
+  
+      const projectsTitle = document.createElement('h2');
+      projectsTitle.textContent = 'Mes projets';
+      portfolioSection.appendChild(projectsTitle);
+        genererFiltres();
+      const gallery = document.createElement('div');
+      gallery.classList.add('gallery');
+  
+      works.forEach(work => {
         const workCard = document.createElement('figure');
         workCard.classList.add('work-card');
-
+  
         const workImage = document.createElement('img');
         workImage.src = work.imageUrl;
-
+  
         const workTitle = document.createElement('h3');
         workTitle.textContent = work.title;
 
-        const workCategory = document.createElement('p');
-        workCategory.textContent = work.category.name;
-
+  
         workCard.appendChild(workImage);
         workCard.appendChild(workTitle);
-        workCard.appendChild(workCategory);
 
-        portfolioSection.appendChild(workCard);
-    });
-}
+
+        gallery.appendChild(workCard);
+      });
   
+      portfolioSection.appendChild(gallery);
+    }
+  }

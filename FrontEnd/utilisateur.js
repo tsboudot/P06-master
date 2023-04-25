@@ -1,6 +1,6 @@
 let form = document.getElementById('login-form');
 
-form.addEventListener('submit', async function(event)  {
+form.addEventListener('submit', async function(event) {
   event.preventDefault();
   let email = document.getElementById('email').value;
   let password = document.getElementById('password').value;
@@ -16,7 +16,14 @@ form.addEventListener('submit', async function(event)  {
       })
     });
     let json = await response.json();
-    console.log(json);
+    if (response.status === 200) {
+      localStorage.setItem('token', json.token);
+      window.location.href = 'index.html';
+    } else {
+      let loginError = document.querySelector('.login_error');
+      loginError.style.display = 'block';
+      console.error('Erreur lors de la requête de login :', json);
+    }
   } catch (error) {
     console.error('Erreur lors de la requête de login :', error);
   }

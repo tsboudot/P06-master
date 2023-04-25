@@ -19,6 +19,7 @@ form.addEventListener('submit', async function(event) {
     if (response.status === 200) {
       localStorage.setItem('token', json.token);
       window.location.href = 'index.html';
+      console.log('bouya');
     } else {
       let loginError = document.querySelector('.login_error');
       loginError.style.display = 'block';

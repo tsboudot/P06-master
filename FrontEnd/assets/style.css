@@ -208,5 +208,23 @@ footer nav ul {
 	color: black;
 	border: 2px solid white;
 	border-radius: 10px;
-	& hover 
+}
+.modale
+{
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 10%;
+	width: 80%;
+	height: 850px;
+	z-index: 2;
+	background-color: white;
+	padding: 10px;
+}
+.modale_contenu{
+	display: none;
+	width: 100%;
+}
+main{
+	position: relative;
 }

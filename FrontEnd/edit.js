@@ -1,3 +1,8 @@
+import {genererWorkModale} from './modale.js';
+import {fetchWorks} from './affichage.js';
+
+let works;
+
 document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('token')) {
         let adminSection = document.querySelector(".admin_section");
@@ -10,4 +15,5 @@ const modale = document.querySelector('.modale');
 
 mode_edition.addEventListener('click', function() {
     modale.style.display = "flex";
+    genererWorkModale(works);
 });

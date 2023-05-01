@@ -1,5 +1,5 @@
 import { genererWorks } from './works.js';
-import { genererFiltres, filtrerTout, filtrerObjets, filtrerAppartements, filtrerHotelsEtRestaurants } from './filters.js';
+import { genererFiltres} from './filters.js';
 
 let works;
 

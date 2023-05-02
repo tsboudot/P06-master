@@ -1,23 +1,43 @@
-
+import { fetchWorks } from "./affichage.js";
+import { edit_delete_sign } from "./edit_delete.js";
 export function genererWorkModale(works = []) {
-  const contenu_modale = document.querySelector('.modale_delete_work');
-  
+  const contenu_modale = document.querySelector('.modale_delete');
+  contenu_modale.innerHTML = '';
+  let i = 0;
   if (works.length === 0) {
     contenu_modale.style.display = 'none';
-    return;
-  }
-  
-  contenu_modale.style.display = 'block';
-  
-  works.forEach(work => {
-    const workCardModale = document.createElement('figure');
-    workCardModale.classList.add('work-card-modale');
+  } else {
+    contenu_modale.style.display = 'block';
 
-    const workImageModale = document.createElement('img');
-    workImageModale.src = work.imageUrl;
-  
-    workCardModale.appendChild(workImageModale);
-  
-    contenu_modale.appendChild(workCardModale);
-  });
+    const worksCards = works.map(work => {
+      
+      const workCard = document.createElement('div');
+      workCard.classList.add('work-card');
+      const workImage = document.createElement('img');
+      workImage.src = work.imageUrl;
+      workCard.appendChild(workImage);
+      edit_delete_sign(work.id, workCard);
+      return workCard;
+    });
+
+    worksCards.forEach(workCard => {
+      contenu_modale.appendChild(workCard);
+      workCard.setAttribute('id', `work-card${i}`);
+      i++;
+    });
+  }
 }
+
+const mode_edition = document.querySelector('#mode_edition');
+const modale = document.querySelector('.modale');
+
+mode_edition.addEventListener('click', function() {
+  modale.style.display = "flex";
+
+  fetchWorks()
+    .then(data => {
+      console.log(data);
+      genererWorkModale(data);
+    })
+    .catch(error => console.error(error));
+});

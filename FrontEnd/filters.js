@@ -17,7 +17,7 @@ export function filtrerObjets() {
 }
 
 export function filtrerAppartements() {
-  console.log(works);
+  console.log("bouya");
   const worksFiltre = works.filter(function (work) {
     return work.category.name === "Appartements";
   });

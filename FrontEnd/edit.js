@@ -1,19 +1,20 @@
-import {genererWorkModale} from './modale.js';
-import {fetchWorks} from './affichage.js';
-
-let works;
+import { genererWorkModale } from "./modale.js";
+import { fetchWorks } from "./affichage.js";
 
 document.addEventListener('DOMContentLoaded', function() {
-    if (localStorage.getItem('token')) {
-        let adminSection = document.querySelector(".admin_section");
-        adminSection.style.display = "flex";
-    }
+  if (localStorage.getItem('token')) {
+    let adminSection = document.querySelector(".admin_section");
+    adminSection.style.display = "flex";
+  }
 });
 
 const mode_edition = document.querySelector('#mode_edition');
 const modale = document.querySelector('.modale');
 
 mode_edition.addEventListener('click', function() {
-    modale.style.display = "flex";
-    genererWorkModale(works);
+  modale.style.display = "flex";
+
+  fetchWorks()
+
 });
+  //delete_sign.addEventListener('click', edit_delete{id});

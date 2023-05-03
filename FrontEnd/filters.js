@@ -1,5 +1,5 @@
-import { genererWorks } from './works.js';
-import { fetchWorks } from './affichage.js';
+import { genererWorks } from './genererWorks_gallery.js';
+import { fetchWorks } from './fetch_works.js';
 
 let works;
 

@@ -1,4 +1,4 @@
-import { fetchWorks } from "./affichage.js";
+import { fetchWorks } from "./fetch_works.js";
 import { edit_delete_sign } from "./edit_delete.js";
 export function genererWorkModale(works = []) {
   const contenu_modale = document.querySelector('.modale_delete');

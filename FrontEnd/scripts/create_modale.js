@@ -1,5 +1,5 @@
-import { genererWorkModale } from "./modale.js";
-import { fetchWorks } from "./affichage.js";
+import { genererWorkModale } from "./genererWorks_modale.js";
+import { fetchWorks } from "./fetch_works.js";
 
 document.addEventListener('DOMContentLoaded', function() {
   if (localStorage.getItem('token')) {

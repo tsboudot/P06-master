@@ -1,4 +1,4 @@
-import { genererWorks } from './genererWorks_gallery.js';
+import { genererWorks } from './genererWorksGallery.js';
 import { fetchWorks } from './fetch_works.js';
 
 let works;

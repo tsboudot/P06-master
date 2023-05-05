@@ -10,7 +10,10 @@ export async function edit_delete(id) {
 
   try {
     const response = await fetch(`http://localhost:5678/api/works/${id}`, requestOptions);
+    console.log(response.ok); // Vérifie si la requête a réussi
+    console.log(response); // Affiche la réponse complète
     const data = await response.json();
+    console.log(data); // Affiche les données renvoyées par l'API
     return data;
   } catch (error) {
     console.error('Error:', error);

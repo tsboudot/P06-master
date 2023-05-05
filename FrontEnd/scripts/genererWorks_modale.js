@@ -2,7 +2,7 @@ import { fetchWorks } from "./fetch_works.js";
 import { edit_delete_sign } from "./edit_delete.js";
 import { edit_post } from "./edit_post.js";
 export function genererWorkModale(works = []) {
-  const contenu_modale = document.querySelector('.modale-contenu');
+  const contenu_modale = document.querySelector('.modale_contenu');
   contenu_modale.innerHTML = '';
   let i = 0;
   if (works.length === 0) {

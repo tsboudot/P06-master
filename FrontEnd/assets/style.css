@@ -229,21 +229,17 @@ footer nav ul {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	height: 100%;
+	height: 85%;
 	width: 100%;
 	padding: 10px;
 
 }
 .modale .work-card{
-	height: 10%;
-	width: 23%;
+
+	width: 10%;
 	
 }
-.modale .work-card img{
-    width: 100%;
-    height: 100%;
-	object-fit: cover;
-}
+
 main{
 	position: relative;
 }

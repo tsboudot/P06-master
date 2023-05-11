@@ -1,12 +1,14 @@
 import {add_work } from "./add_work.js";
 import { genererBoutonsModaleMenuePost } from "./boutons_modale.js";
 export function edit_post() 
+
 {
 const modale_titre = document.querySelector(".modale_titre");
 modale_titre.innerHTML = "Ajoutez de nouvelles photos";
 const modale_contenu = document.querySelector(".modale_contenu");
 modale_contenu.innerHTML = " ";
-const post_input = document.createElement("input")
+const post_input = document.createElement("input");
+post_input.setAttribute("id", "post_input");
 
 post_input.setAttribute("type", "file");
 post_input.setAttribute("display", "none");
@@ -22,6 +24,7 @@ const ajoutez_work_bouton = document.createElement ("button");
 ajoutez_work_bouton.innerHTML = "Ajouter une photo";
 ajoutez_work_bouton.setAttribute("id", "ajoutez_work_bouton");
 ajoutez_photo.appendChild(ajoutez_work_bouton);
+
 const ajoutez_photo_label = document.createElement("label");
 ajoutez_photo_label.setAttribute("for", "ajoutez_photo");
 ajoutez_photo.appendChild(ajoutez_photo_label);
@@ -54,4 +57,27 @@ ajoutez_photo_categorie.appendChild(cat_hotelRestau);
 
 modale_contenu.appendChild(ajoutez_photo_categorie);
 genererBoutonsModaleMenuePost();
+
+ajoutez_work_bouton.addEventListener("click", function() {
+    post_input.click();
+  });
+  const valider = document.getElementById("bouton_Valider");
+  valider.addEventListener("click", function() {
+  const image = post_input.files[0];
+    const title = ajoutez_photo_titre.value;
+    const category = ajoutez_photo_categorie.value;
+    const authToken = localStorage.getItem('token');
+
+    add_work(image, title, category, authToken)
+      .then(response => {
+        // Gérer l'ajout réussi de la photo
+        console.log("Photo ajoutée avec succès :", response);
+      })
+      .catch(error => {
+        // Gérer l'erreur
+        console.error("Erreur lors de l'ajout de la photo :", error);
+      });
+
+});
 }
+

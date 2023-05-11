@@ -1,6 +1,7 @@
 import { fetchWorks } from "./fetch_works.js";
 import { edit_delete_sign } from "./edit_delete.js";
 import { edit_post } from "./edit_post.js";
+
 export function genererWorkModale(works = []) {
   const contenu_modale = document.querySelector('.modale_contenu');
   contenu_modale.innerHTML = '';
@@ -43,6 +44,3 @@ mode_edition.addEventListener('click', function() {
     })
     .catch(error => console.error(error));
 });
-
-const mode_post = document.getElementById('bouton_Post');
-mode_post.addEventListener('click', edit_post);

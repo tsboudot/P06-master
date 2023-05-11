@@ -1,8 +1,6 @@
 import {add_work } from "./add_work.js";
 import { genererBoutonsModaleMenuePost } from "./boutons_modale.js";
 export function edit_post() 
-
-
 {
 const modale_titre = document.querySelector(".modale_titre");
 modale_titre.innerHTML = "Ajoutez de nouvelles photos";
@@ -20,12 +18,14 @@ modale_contenu.appendChild(ajoutez_photo);
 const ajoutez_photo_icone = document.createElement('div');
 ajoutez_photo_icone.innerHTML = '<i class="fa-regular fa-image"></i>';
 ajoutez_photo.appendChild(ajoutez_photo_icone);
+const ajoutez_work_bouton = document.createElement ("button");
+ajoutez_work_bouton.innerHTML = "Ajouter une photo";
+ajoutez_work_bouton.setAttribute("id", "ajoutez_work_bouton");
+ajoutez_photo.appendChild(ajoutez_work_bouton);
 const ajoutez_photo_label = document.createElement("label");
-
 ajoutez_photo_label.setAttribute("for", "ajoutez_photo");
 ajoutez_photo.appendChild(ajoutez_photo_label);
 ajoutez_photo_label.innerHTML=("jpeg, png: 4mo max");
-
 const ajoutez_photo_titre_label = document.createElement("p");
 ajoutez_photo_titre_label.innerHTML = "Titre";
 modale_contenu.appendChild(ajoutez_photo_titre_label);
@@ -38,21 +38,15 @@ ajoutez_photo_categorie_label.innerHTML = "Catégorie";
 
 modale_contenu.appendChild(ajoutez_photo_categorie_label);
 const ajoutez_photo_categorie = document.createElement('select');
-
-// Créez les éléments <option> pour chaque catégorie
 const cat_objet = document.createElement('option');
 cat_objet.value = 1;
 cat_objet.textContent = 'Objet';
-
 const cat_appartement = document.createElement('option');
 cat_appartement.value = 2;
 cat_appartement.textContent = 'Appartement';
-
 const cat_hotelRestau = document.createElement('option');
 cat_hotelRestau.value = 3;
 cat_hotelRestau.textContent = 'Hotel & restaurant';
-
-// Ajoutez les éléments <option> à l'élément <select>
 ajoutez_photo_categorie.appendChild(cat_objet);
 ajoutez_photo_categorie.appendChild(cat_appartement);
 ajoutez_photo_categorie.appendChild(cat_hotelRestau);
@@ -60,4 +54,4 @@ ajoutez_photo_categorie.appendChild(cat_hotelRestau);
 
 modale_contenu.appendChild(ajoutez_photo_categorie);
 genererBoutonsModaleMenuePost();
-const valider_bouton = document.getElementById("bouton_Valider");}
+}

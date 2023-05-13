@@ -23,6 +23,12 @@ export function genererBoutonsModaleMenueDelete() {
   const close_modale = document.createElement("button");
   close_modale.innerHTML = '<i class="fa-sharp fa-solid fa-xmark"></i>';
   nav_modale.appendChild(close_modale);
+  close_modale.addEventListener('click', function() {
+    const modale = document.querySelector(".modale");
+    const nav_modale = document.querySelector(".nav_modale");
+    nav_modale.innerHTML = " ";
+    modale.style.display = "none";
+  })
 }
 export function genererBoutonsModaleMenuePost(){
   const bouton_modale = document.querySelector(".modale_boutons");

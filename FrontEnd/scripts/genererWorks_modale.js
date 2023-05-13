@@ -9,13 +9,14 @@ export function genererWorkModale(works = []) {
   if (works.length === 0) {
     contenu_modale.style.display = 'none';
   } else {
-    contenu_modale.style.display = 'block';
+    contenu_modale.style.display = 'flex';
 
     const worksCards = works.map(work => {
       
       const workCard = document.createElement('div');
-      workCard.classList.add('work-card');
+      workCard.classList.add('work-card-modale');
       const workImage = document.createElement('img');
+      workImage.classList.add('work-image-modale');
       workImage.src = work.imageUrl;
       workCard.appendChild(workImage);
       edit_delete_sign(work.id, workCard);

@@ -1,5 +1,6 @@
 import { edit_post } from './edit_post.js';
 import { edit_delete } from './edit_delete.js';
+import { fetchWorks } from './fetch_works.js';
 
 export function genererBoutonsModaleMenueDelete() {
   const bouton_modale = document.querySelector(".modale_boutons");
@@ -15,10 +16,20 @@ export function genererBoutonsModaleMenueDelete() {
   bouton_deleteAll.innerHTML = "Supprimer toutes les photos";
   bouton_deleteAll.id = "bouton_deleteAll";
   bouton_modale.appendChild(bouton_deleteAll);
-
   bouton_deleteAll.addEventListener('click', function() {
-    edit_delete();
-  });
+    fetchWorks()
+    .then(data => {
+      console.log(data);
+      let i = 0;
+      while (i < data.length) {
+        edit_delete(data[i].id);
+        i++;
+      }
+    })
+    .catch(error => console.error(error));
+});
+
+
   const nav_modale = document.querySelector(".nav_modale");
   const close_modale = document.createElement("button");
   close_modale.innerHTML = '<i class="fa-sharp fa-solid fa-xmark"></i>';
@@ -26,7 +37,7 @@ export function genererBoutonsModaleMenueDelete() {
   close_modale.addEventListener('click', function() {
     const modale = document.querySelector(".modale");
     const nav_modale = document.querySelector(".nav_modale");
-    nav_modale.innerHTML = " ";
+    nav_modale.innerHTML = "";
     modale.style.display = "none";
   })
 }

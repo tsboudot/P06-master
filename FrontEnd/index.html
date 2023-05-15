@@ -14,10 +14,12 @@
 	<script type="module" src="./scripts/fetch_works.js"></script>
 	<script type="module" src="./scripts/create_modale.js"></script>
 </head>
-<body>	<div class ="admin_section">
-	<button id="mode_edition"> <i class="fa-solid fa-pen-to-square"></i> Mode edition</button>
-	<button id="publier_changement"> Publier changement</button>
-</div>
+<body>	<div class="admin_section">
+	<a href="#modal1" class="js-modal" id="mode_edition">
+	  <i class="fa-solid fa-pen-to-square"></i> Mode édition
+	</a>
+	<button id="publier_changement">Publier changement</button>
+  </div>
 <header>
 
 	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
@@ -30,15 +32,21 @@
 		</ul>
 	</nav>
 </header>
-<main>
-	<section class="modale">
-		<div class="header_modale">
-			<div class= nav_modale></div>
-		<h2 class="modale_titre"></h2></div>
-		<div class="modale_contenu"></div>
+<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-modal="false" style="display: none" aria-labelledby="titlemodal">
+	<div class="modal_wrapper">
+	  <div class="header_modale">
 		<div class="modale_boutons">
+		  <button class="js-modal-close">
+			<i class="fa-sharp fa-solid fa-xmark"></i>
+		  </button>
 		</div>
-	  </section>
+		<h2 class="modale_titre">Modale</h2>
+	  </div>
+	</div>
+  </aside>
+<main>
+
+
 	<section id="introduction">
 		<figure>
 			<img src="./assets/images/sophie-bluel.png" alt="">

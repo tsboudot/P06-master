@@ -189,7 +189,7 @@ footer nav ul {
 	display: none;
 }
 .admin_section{
-	display: none;
+	display: flex;
 	background-color: black;
 	color: white;
 	flex-direction: row;
@@ -209,21 +209,30 @@ footer nav ul {
 	border: 2px solid white;
 	border-radius: 10px;
 }
-.modale
-{
-	display: none;
+.modale {
+	display: flex;
 	position: absolute;
-	align-self: auto;
-	margin-left: 20%;
-	margin-right: 20%; 
-	width: 60%;
-	height: 850px;
-	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	z-index: 3;
+
+	background: rgba(0, 0, 0, 0.6);
+	
+  }
+.modale_wrapper{
+	width: 580px;
+	max-width: calc (100vh - 20px);
+	height: calc(100vh - 20px);
+	overflow: auto;
 	background-color: white;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 10px;
+	box-sizing: border-box;
+	padding: 25px;
+
 }
 .modale_contenu{
 
@@ -248,9 +257,7 @@ footer nav ul {
 	object-fit: cover;
 }
 
-main{
-	position: relative;
-}
+
 button
 {
 	font-family: 'Syne';

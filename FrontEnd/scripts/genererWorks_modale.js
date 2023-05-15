@@ -1,4 +1,4 @@
-import { fetchWorks } from "./fetch_works.js";
+/*import { fetchWorks } from "./fetch_works.js";
 import { edit_delete_sign } from "./edit_delete.js";
 import { edit_post } from "./edit_post.js";
 
@@ -45,3 +45,4 @@ mode_edition.addEventListener('click', function() {
     })
     .catch(error => console.error(error));
 });
+*/

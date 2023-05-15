@@ -1,4 +1,4 @@
-export async function edit_delete(id) {
+/*export async function edit_delete(id) {
   const token = localStorage.getItem('token'); // Récupère le jeton d'authentification depuis le stockage local
   const requestOptions = {
     method: 'DELETE',
@@ -26,3 +26,4 @@ export async function edit_delete(id) {
     delete_sign.addEventListener('click', () => edit_delete(id));
     container.appendChild(delete_sign);
   }
+  */

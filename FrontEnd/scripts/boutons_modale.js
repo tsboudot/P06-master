@@ -1,4 +1,4 @@
-import { edit_post } from './edit_post.js';
+/*import { edit_post } from './edit_post.js';
 import { edit_delete } from './edit_delete.js';
 import { fetchWorks } from './fetch_works.js';
 
@@ -30,16 +30,7 @@ export function genererBoutonsModaleMenueDelete() {
 });
 
 
-  const nav_modale = document.querySelector(".nav_modale");
-  const close_modale = document.createElement("button");
-  close_modale.innerHTML = '<i class="fa-sharp fa-solid fa-xmark"></i>';
-  nav_modale.appendChild(close_modale);
-  close_modale.addEventListener('click', function() {
-    const modale = document.querySelector(".modale");
-    const nav_modale = document.querySelector(".nav_modale");
-    nav_modale.innerHTML = "";
-    modale.style.display = "none";
-  })
+  
 }
 export function genererBoutonsModaleMenuePost(){
   const bouton_modale = document.querySelector(".modale_boutons");
@@ -57,3 +48,4 @@ export function genererBoutonsModaleMenuePost(){
   bouton_Post.id = "bouton_Valider";
   bouton_modale.appendChild(bouton_Post);
 }
+*/

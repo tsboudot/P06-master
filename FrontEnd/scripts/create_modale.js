@@ -19,6 +19,8 @@ const openModal = function(e) {
   modal.addEventListener('click', closeModal);
   modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
   modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
+  genererWorkModale();
+  genererBoutonsModaleMenueDelete();
   
 }
 const closeModal = function(e) {

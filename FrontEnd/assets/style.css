@@ -223,12 +223,15 @@ footer nav ul {
 	
   }
   .modal_wrapper{
-	width: 600px;
+	width: 800px;
+	height: fit-content;
 	max-width: calc(100vw - 40px);
 	max-height: calc(100vw - 40px);
 	padding: 20px;
 	box-sizing: border-box;
-	overflow: auto;
+	overflow: none;
+	background-color: white;
+	margin: 25px auto;
   }
 .modale_contenu{
 
@@ -245,7 +248,7 @@ footer nav ul {
 	
 }
 .work-image-modale{
-	width: 290px;
+	width: 150px;
 	height: 140px;
 	object-fit: cover;
 }
@@ -293,7 +296,8 @@ width: 60px;
 .modale_separation{
 	height: 0px;
 	border: 1px solid grey;
-	width: 100%;
+	width: 60%;
+	margin: 0 auto;
 }
 .delete_sign{
 
@@ -307,3 +311,82 @@ width: 60px;
 	width: 25px;
 	color: white;
 } 
+#modal-close	{
+	background-color: white;
+	height: 70px;
+	width: 70px;
+	border: 0;
+	position: absolute;
+	top: 5px;
+	left: 91%;
+
+}
+.modal-back{
+	background-color: white;
+	height: 45px;
+	width: 70px;
+	border: 0;
+	position: absolute;
+	top: 5px
+	left 5%;
+}
+.modal-back i{
+	color : lightgrey;
+	height: 25px;
+	width: 25px;
+}
+.nav_modale
+{
+	position: relative;
+	height: 50px;
+}
+#modal-close i {
+	color: lightgrey;
+	height: 100%;
+	width: 100%;
+}
+.login_section{
+	height: 45wm;
+	width: 45wm;
+	margin: 150px auto;
+	padding-left: 41%;
+	
+}
+.login_page {
+	background-color: rgb(254, 252, 248);}
+.modale_boutons{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+}
+.modale_titre {
+text-align: center;
+margin-top: 10px;
+}
+#filters {
+text-align: center;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+.modale_contenu_post_div{
+	display: flex;
+	flex-direction: column;
+	margin: 25px auto;
+}
+#ajoutez_photo{
+	height: 180px;
+	width: 350px;
+}
+
+.delete_all{
+	background: white;
+	border: 0;
+	color: red;
+	text-decoration: underline;
+}
+.modale_valider{
+	opacity: 0.2;
+}

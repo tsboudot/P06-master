@@ -9,10 +9,12 @@ export function genererBoutonsModaleMenueDelete() {
   const modal_valider = document.querySelector(".modale_valider");
   modal_valider.classList.add("hidden");
   const bouton_Post = document.querySelector(".mode_post");
+  bouton_Post.classList.remove("hidden");
   bouton_Post.addEventListener('click', function() {
     edit_post();
   });
   const bouton_deleteAll = document.querySelector(".delete_all");
+  bouton_deleteAll.classList.remove('hidden')
   bouton_deleteAll.addEventListener('click', function() {
     fetchWorks()
       .then(data => {

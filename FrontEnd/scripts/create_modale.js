@@ -1,5 +1,5 @@
 import { genererBoutonsModaleMenueDelete } from "./boutons_modale.js";
-import { genererWorkModale} from "./genererWorks_modale.js";
+
 
 document.addEventListener('DOMContentLoaded', function() {
   if (localStorage.getItem('token')) {
@@ -19,7 +19,7 @@ const openModal = function(e) {
   modal.addEventListener('click', closeModal);
   modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
   modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
-  genererWorkModale();
+
   genererBoutonsModaleMenueDelete();
   
 }

@@ -67,5 +67,5 @@ export function genererFiltres() {
 fetchWorks().then(data => {
   works = data;
   genererWorks(works);
-  genererFiltres();
+
 }).catch(error => console.error(error));

@@ -5,6 +5,8 @@ import { edit_post } from "./edit_post.js";
 export function genererWorkModale(works = []) {
   const contenu_modale = document.querySelector('.modale_contenu');
   contenu_modale.innerHTML = '';
+  const modale_titre = document.querySelector('.modale_titre');
+  modale_titre.innerHTML = 'Galerie photo'
   let i = 0;
   if (works.length === 0) {
     contenu_modale.style.display = 'none';

@@ -79,7 +79,7 @@ export function edit_post() {
     }
   });
 
-  const valider = document.querySelector(".modale_valider");
+  const valider = document.getElementById("bouton_Valider");
   valider.addEventListener("click", function (event) {
     event.preventDefault();
   

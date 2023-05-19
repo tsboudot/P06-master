@@ -1,4 +1,4 @@
-/*import { fetchWorks } from "./fetch_works.js";
+import { fetchWorks } from "./fetch_works.js";
 import { edit_delete_sign } from "./edit_delete.js";
 import { edit_post } from "./edit_post.js";
 
@@ -32,10 +32,10 @@ export function genererWorkModale(works = []) {
 
 }
 
-const mode_edition = document.querySelector('#mode_edition');
-const modale = document.querySelector('.modale');
+const openModal = document.querySelector('.js-modal');
+const modale = document.querySelector('.modal');
 
-mode_edition.addEventListener('click', function() {
+openModal.addEventListener('click', function() {
   modale.style.display = "flex";
 
   fetchWorks()
@@ -45,4 +45,3 @@ mode_edition.addEventListener('click', function() {
     })
     .catch(error => console.error(error));
 });
-*/

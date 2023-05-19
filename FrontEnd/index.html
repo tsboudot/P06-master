@@ -14,7 +14,7 @@
 	<script type="module" src="./scripts/fetch_works.js"></script>
 	<script type="module" src="./scripts/create_modale.js"></script>
 </head>
-<body>	<div class="admin_section">
+<body>	<div class="admin_section hidden">
 	<a href="#modal1" class="js-modal" id="mode_edition">
 	  <i class="fa-solid fa-pen-to-square"></i> Mode édition
 	</a>
@@ -32,16 +32,24 @@
 		</ul>
 	</nav>
 </header>
-<aside id="modal1" class="modal" aria-hidden="true" role="dialog" aria-modal="false" style="display: none" aria-labelledby="titlemodal">
+<aside  id ="modal1" class="modal" aria-hidden="true" aria-modal="false" aria-labelledby="tittlemodal" style="display:none">
 	<div class="modal_wrapper">
 	  <div class="header_modale">
-		<div class="modale_boutons">
-		  <button class="js-modal-close">
+		<div class="nav_modale">
+		<button class="modal-back"><i class="fa-solid fa-arrow-left"></i></button>
+		<button class="js-modal-close">
 			<i class="fa-sharp fa-solid fa-xmark"></i>
 		  </button>
 		</div>
 		<h2 class="modale_titre">Modale</h2>
 	  </div>
+	  <div class ="modale_contenu"></div>
+	  <div class ="modale_separation"></div>
+	  <div class ="modale_boutons">
+		<button class="mode_post ">Ajoutez des photos</button>
+		<button class=" delete_all ">supprimez toutes les photos</button>
+		<button class="modale_valider ">Valider</button>
+	</div>
 	</div>
   </aside>
 <main>

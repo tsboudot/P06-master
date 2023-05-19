@@ -12,7 +12,7 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
+article, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
+article, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -209,31 +209,27 @@ footer nav ul {
 	border: 2px solid white;
 	border-radius: 10px;
 }
-.modale {
+.modal{
+
+	position: fixed;
 	display: flex;
-	position: absolute;
+	z-index: 2;
 	top: 0;
 	left: 0;
-	width: 100%;
 	height: 100%;
+	width: 100%;
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	z-index: 3;
-
 	background: rgba(0, 0, 0, 0.6);
 	
   }
-.modale_wrapper{
-	width: 580px;
-	max-width: calc (100vh - 20px);
-	height: calc(100vh - 20px);
-	overflow: auto;
-	background-color: white;
+  .modal_wrapper{
+	width: 600px;
+	max-width: calc(100vw - 40px);
+	max-height: calc(100vw - 40px);
+	padding: 20px;
 	box-sizing: border-box;
-	padding: 25px;
-
-}
+	overflow: auto;
+  }
 .modale_contenu{
 
 	width: 100%;
@@ -241,14 +237,11 @@ footer nav ul {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	height: 85%;
-	width: 100%;
-
-
 }
 .work-card-modale{
 
 	margin: 15px;
+	position: relative;
 	
 }
 .work-image-modale{
@@ -297,3 +290,20 @@ width: 60px;
 	margin: auto;
 	object-fit: cover;
 }
+.modale_separation{
+	height: 0px;
+	border: 1px solid grey;
+	width: 100%;
+}
+.delete_sign{
+
+	position: absolute;
+	top : 5px;
+	left: 85%;
+	z-index: 2;
+}
+.delete_sign i{
+	height: 25px;
+	width: 25px;
+	color: white;
+} 

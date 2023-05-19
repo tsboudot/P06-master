@@ -1,4 +1,4 @@
-/*import { genererBoutonsModaleMenuePost } from "./boutons_modale.js";
+import { genererBoutonsModaleMenuePost } from "./boutons_modale.js";
 
 export function edit_post() {
   const modale_titre = document.querySelector(".modale_titre");
@@ -79,7 +79,7 @@ export function edit_post() {
     }
   });
 
-  const valider = document.getElementById("bouton_Valider");
+  const valider = document.querySelector(".modale_valider");
   valider.addEventListener("click", function (event) {
     event.preventDefault();
   
@@ -116,4 +116,4 @@ export function edit_post() {
         console.error("Erreur lors de l'ajout de la photo :", error);
       });
   });
-}*/
+}

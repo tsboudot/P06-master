@@ -18,22 +18,31 @@ const openModal = function(e) {
   modal = target;
   modal.addEventListener('click', closeModal);
   modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
-  genererBoutonsModaleMenueDelete();
-  genererWorkModale();
+  modal.querySelector('.js-modal-stop').addEventListener('click', stopPropagation);
+  
 }
 const closeModal = function(e) {
-  console.log('azerty');
+
   if (modal===null) return
+  /*if (e.target === modal || modal.contains(e.target)) {
+    return;}*/
   e.preventDefault();
+
   modal.style.display = "none";
-  target.setAttribute('aria-hidden', 'true');
-  target.removeAttribute('aria-modal');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.removeAttribute('aria-modal');
   modal.removeEventListener('click', closeModal);
   modal.querySelector('.js-modal-close').removeEventListener('click', closeModal);
+  modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation);
 
 }
 document.querySelectorAll('.js-modal').forEach(a => {
   a.addEventListener('click', openModal)})
+  
+  const stopPropagation = function (e) {
+    e.stopPropagation(); return
+  }
+
 
 /*
 const modal = document.querySelector('.modal');

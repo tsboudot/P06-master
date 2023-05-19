@@ -1,6 +1,6 @@
-/*import { genererBoutonsModaleMenueDelete } from "./boutons_modale.js";
+import { genererBoutonsModaleMenueDelete } from "./boutons_modale.js";
 import { genererWorkModale} from "./genererWorks_modale.js";
-*/
+
 document.addEventListener('DOMContentLoaded', function() {
   if (localStorage.getItem('token')) {
     let adminSection = document.querySelector(".admin_section");
@@ -18,6 +18,8 @@ const openModal = function(e) {
   modal = target;
   modal.addEventListener('click', closeModal);
   modal.querySelector('.js-modal-close').addEventListener('click', closeModal);
+  genererBoutonsModaleMenueDelete();
+  genererWorkModale();
 }
 const closeModal = function(e) {
   console.log('azerty');

@@ -1,4 +1,5 @@
 import { genererBoutonsModaleMenuePost } from "./boutons_modale.js";
+import { checkInputs } from './check-input.js';
 
 export function edit_post() {
   const modale_titre = document.querySelector(".modale_titre");
@@ -39,6 +40,7 @@ export function edit_post() {
 
   const ajoutez_photo_titre = document.createElement("input");
   ajoutez_photo_titre.setAttribute("type", "text");
+  ajoutez_photo_titre.setAttribute("id", "ajoutez_photo_titre");
   modale_menu_post_div.appendChild(ajoutez_photo_titre);
 
   const ajoutez_photo_categorie_label = document.createElement("p");
@@ -46,6 +48,7 @@ export function edit_post() {
   modale_menu_post_div.appendChild(ajoutez_photo_categorie_label);
 
   const ajoutez_photo_categorie = document.createElement("select");
+  ajoutez_photo_categorie.setAttribute("id", "ajoutez_photo_categorie");
   const cat_objet = document.createElement("option");
   cat_objet.value = 1;
   cat_objet.textContent = "Objet";
@@ -80,6 +83,7 @@ export function edit_post() {
       reader.readAsDataURL(file);
     }
   });
+  checkInputs();
 
   const valider = document.querySelector(".modale_valider");
   valider.addEventListener("click", function (event) {

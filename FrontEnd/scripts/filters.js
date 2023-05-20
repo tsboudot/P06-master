@@ -40,7 +40,7 @@ export function genererFiltres() {
 
   const filterButtons = [
     { name: 'Tous', id: 'all', action: filtrerTout },
-    { name: 'objets', id: 'objets', action: filtrerObjets },
+    { name: 'Objets', id: 'objets', action: filtrerObjets },
     { name: 'Appartements', id: 'appartements', action: filtrerAppartements },
     { name: 'Hotels et Restaurants', id: 'hotels-et-restaurants', action: filtrerHotelsEtRestaurants }
   ];

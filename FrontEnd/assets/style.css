@@ -371,10 +371,12 @@ display: flex;
 flex-direction: row;
 justify-content: space-evenly;
 }
-.modale_contenu_post_div{
+.modale_menu_post_div{
 	display: flex;
 	flex-direction: column;
 	margin: 25px auto;
+	justify-content: center;
+	align-items: center;
 }
 #ajoutez_photo{
 	height: 180px;

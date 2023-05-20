@@ -36,6 +36,10 @@ export function genererBoutonsModaleMenuePost() {
   modal_valider.classList.remove("hidden");
   const openModal = document.querySelector('.js-modal');
   const modale = document.querySelector('.modal');
+  const mode_post = document.querySelector(".mode_post");
+  mode_post.classList.add("hidden");
+  const delete_all = document.querySelector(".delete_all");
+  delete_all.classList.add("hidden");
 
   openModal.addEventListener('click', function() {
     modale.style.display = "flex";

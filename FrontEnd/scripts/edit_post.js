@@ -5,17 +5,19 @@ export function edit_post() {
   modale_titre.innerHTML = "Ajoutez de nouvelles photos";
   const modale_contenu = document.querySelector(".modale_contenu");
   modale_contenu.innerHTML = " ";
-
+  const modale_menu_post_div = document.createElement("div");
+  modale_contenu.appendChild(modale_menu_post_div);
+  modale_menu_post_div.classList.add("modale_menu_post_div")
   const post_input = document.createElement("input");
   post_input.setAttribute("id", "post_input");
   post_input.setAttribute("type", "file");
   post_input.setAttribute("display", "none");
   post_input.classList.add("hidden");
-  modale_contenu.appendChild(post_input);
+  modale_menu_post_div.appendChild(post_input);
 
   const ajoutez_photo = document.createElement("div");
   ajoutez_photo.setAttribute("id", "ajoutez_photo");
-  modale_contenu.appendChild(ajoutez_photo);
+  modale_menu_post_div.appendChild(ajoutez_photo);
 
   const ajoutez_photo_icone = document.createElement("div");
   ajoutez_photo_icone.innerHTML = '<i class="fa-regular fa-image"></i>';
@@ -33,15 +35,15 @@ export function edit_post() {
 
   const ajoutez_photo_titre_label = document.createElement("p");
   ajoutez_photo_titre_label.innerHTML = "Titre";
-  modale_contenu.appendChild(ajoutez_photo_titre_label);
+  modale_menu_post_div.appendChild(ajoutez_photo_titre_label);
 
   const ajoutez_photo_titre = document.createElement("input");
   ajoutez_photo_titre.setAttribute("type", "text");
-  modale_contenu.appendChild(ajoutez_photo_titre);
+  modale_menu_post_div.appendChild(ajoutez_photo_titre);
 
   const ajoutez_photo_categorie_label = document.createElement("p");
   ajoutez_photo_categorie_label.innerHTML = "Catégorie";
-  modale_contenu.appendChild(ajoutez_photo_categorie_label);
+  modale_menu_post_div.appendChild(ajoutez_photo_categorie_label);
 
   const ajoutez_photo_categorie = document.createElement("select");
   const cat_objet = document.createElement("option");
@@ -57,7 +59,7 @@ export function edit_post() {
   ajoutez_photo_categorie.appendChild(cat_appartement);
   ajoutez_photo_categorie.appendChild(cat_hotelRestau);
 
-  modale_contenu.appendChild(ajoutez_photo_categorie);
+  modale_menu_post_div.appendChild(ajoutez_photo_categorie);
 
   genererBoutonsModaleMenuePost();
 
@@ -79,7 +81,7 @@ export function edit_post() {
     }
   });
 
-  const valider = document.getElementById("bouton_Valider");
+  const valider = document.querySelector(".modale_valider");
   valider.addEventListener("click", function (event) {
     event.preventDefault();
   

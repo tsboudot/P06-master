@@ -23,7 +23,7 @@ export async function edit_delete(id) {
   export function edit_delete_sign(id, container) {
     const delete_sign = document.createElement('div');
     delete_sign.classList.add('delete_sign');
-    delete_sign.innerHTML = '<i class="fa-light fa-trash"></i>';
+    delete_sign.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
     delete_sign.addEventListener('click', () => edit_delete(id));
     container.appendChild(delete_sign);
   }

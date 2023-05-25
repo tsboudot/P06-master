@@ -226,10 +226,10 @@ footer nav ul {
 	width: 800px;
 	height: fit-content;
 	max-width: calc(100vw - 40px);
-	max-height: calc(100vw - 40px);
-	padding: 20px;
+	max-height: calc(40em - 40px);
+	padding: 10px;
 	box-sizing: border-box;
-	overflow: none;
+	overflow: auto;
 	background-color: white;
 	margin: 25px auto;
   }
@@ -331,7 +331,7 @@ width: 60px;
 	left 5%;
 }
 .modal-back i{
-	color : lightgrey;
+	color : grey;
 	height: 25px;
 	width: 25px;
 }
@@ -341,7 +341,7 @@ width: 60px;
 	height: 50px;
 }
 #modal-close i {
-	color: lightgrey;
+	color:	grey;
 	height: 100%;
 	width: 100%;
 }

@@ -203,6 +203,10 @@ footer nav ul {
 	color: white;
 	margin: 0 5%;
 }
+.modal_btn_intro_figure{
+	margin-left: 10%;
+
+}
 #publier_changement{
 	background-color: white;
 	color: black;
@@ -370,6 +374,8 @@ text-align: center;
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
+width: 85%;
+margin: 0 auto;
 }
 .modale_menu_post_div{
 	display: flex;
@@ -392,3 +398,18 @@ justify-content: space-evenly;
 .modale_valider{
 	opacity: 0.2;
 }
+.filter_btn{
+	color: #1D6154;
+	border: 1px solid #1D6154;
+	background-color: white;
+}
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	text-align: center;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }

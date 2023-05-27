@@ -48,6 +48,7 @@ export function genererFiltres() {
   filterButtons.forEach(button => {
     const filterButton = document.createElement('button');
     filterButton.textContent = button.name;
+    filterButton.className="filter_btn";
     filterButton.id = button.id;
     filtersContainer.appendChild(filterButton);
 

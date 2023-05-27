@@ -5,6 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
   if (localStorage.getItem('token')) {
     let adminSection = document.querySelector(".admin_section");
     adminSection.classList.remove('hidden');
+
+    const intro_figure = document.querySelector(".intro_figure");
+    const modal_btn_intro_figure = document.createElement("div");
+    modal_btn_intro_figure.innerHTML = '<i class="fa-sharp fa-solid fa-pen-to-square"></i> Modifier';
+    modal_btn_intro_figure.classList.add('modal_btn_intro_figure');
+    intro_figure.appendChild(modal_btn_intro_figure);
+
+    const intro_article = document.querySelector(".intro_article");
+    const modal_btn_intro_article = document.createElement("div");
+    modal_btn_intro_article.innerHTML = '<i class="fa-sharp fa-solid fa-pen-to-square"></i> Modifier';
+    intro_article.insertBefore(modal_btn_intro_article, intro_article.firstChild);;
   }
 });
 

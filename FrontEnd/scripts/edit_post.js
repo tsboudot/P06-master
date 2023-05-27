@@ -69,6 +69,7 @@ export function edit_post() {
   ajoutez_work_bouton.addEventListener("click", function () {
     post_input.click();
   });
+
   post_input.addEventListener("change", function() {
     const file = this.files[0];
     if (file) {
@@ -83,6 +84,7 @@ export function edit_post() {
       reader.readAsDataURL(file);
     }
   });
+
   checkInputs();
 
   const valider = document.querySelector(".modale_valider");
@@ -116,6 +118,7 @@ export function edit_post() {
       .then(data => {
         // Handle successful addition of the photo
         console.log("Photo ajoutée avec succès :", data);
+        alert("Photo ajoutée avec succès");
       })
       .catch(error => {
         // Handle error

@@ -8,17 +8,27 @@ export function edit_post() {
   modale_contenu.innerHTML = " ";
   const modale_menu_post_div = document.createElement("div");
   modale_contenu.appendChild(modale_menu_post_div);
-  modale_menu_post_div.classList.add("modale_menu_post_div")
+  modale_menu_post_div.classList.add("modale_menu_post_div");
+
+  // Ajouter un élément <form>
+  const form = document.createElement("form");
+  form.setAttribute("enctype", "multipart/form-data");
+  modale_menu_post_div.appendChild(form);
+
   const post_input = document.createElement("input");
   post_input.setAttribute("id", "post_input");
   post_input.setAttribute("type", "file");
   post_input.setAttribute("display", "none");
   post_input.classList.add("hidden");
-  modale_menu_post_div.appendChild(post_input);
+
+  // Ajouter l'attribut required
+  post_input.setAttribute("required", "required");
+
+  form.appendChild(post_input);
 
   const ajoutez_photo = document.createElement("div");
   ajoutez_photo.setAttribute("id", "ajoutez_photo");
-  modale_menu_post_div.appendChild(ajoutez_photo);
+  form.appendChild(ajoutez_photo);
 
   const ajoutez_photo_icone = document.createElement("div");
   ajoutez_photo_icone.innerHTML = '<i class="fa-regular fa-image"></i>';
@@ -36,19 +46,27 @@ export function edit_post() {
 
   const ajoutez_photo_titre_label = document.createElement("p");
   ajoutez_photo_titre_label.innerHTML = "Titre";
-  modale_menu_post_div.appendChild(ajoutez_photo_titre_label);
+  form.appendChild(ajoutez_photo_titre_label);
 
   const ajoutez_photo_titre = document.createElement("input");
   ajoutez_photo_titre.setAttribute("type", "text");
   ajoutez_photo_titre.setAttribute("id", "ajoutez_photo_titre");
-  modale_menu_post_div.appendChild(ajoutez_photo_titre);
+
+  // Ajouter l'attribut required
+  ajoutez_photo_titre.setAttribute("required", "required");
+
+  form.appendChild(ajoutez_photo_titre);
 
   const ajoutez_photo_categorie_label = document.createElement("p");
   ajoutez_photo_categorie_label.innerHTML = "Catégorie";
-  modale_menu_post_div.appendChild(ajoutez_photo_categorie_label);
+  form.appendChild(ajoutez_photo_categorie_label);
 
   const ajoutez_photo_categorie = document.createElement("select");
   ajoutez_photo_categorie.setAttribute("id", "ajoutez_photo_categorie");
+
+  // Ajouter l'attribut required
+  ajoutez_photo_categorie.setAttribute("required", "required");
+
   const cat_objet = document.createElement("option");
   cat_objet.value = 1;
   cat_objet.textContent = "Objet";
@@ -62,7 +80,7 @@ export function edit_post() {
   ajoutez_photo_categorie.appendChild(cat_appartement);
   ajoutez_photo_categorie.appendChild(cat_hotelRestau);
 
-  modale_menu_post_div.appendChild(ajoutez_photo_categorie);
+  form.appendChild(ajoutez_photo_categorie);
 
   genererBoutonsModaleMenuePost();
 
@@ -90,39 +108,48 @@ export function edit_post() {
   const valider = document.querySelector(".modale_valider");
   valider.addEventListener("click", function (event) {
     event.preventDefault();
-  
-    const image = post_input.files[0];
-    const title = ajoutez_photo_titre.value;
-    const category = ajoutez_photo_categorie.value;
-    const authToken = localStorage.getItem('token');
-  
-    const formData = new FormData();
-    formData.append('image', image);
-    formData.append('title', title);
-    formData.append('category', category);
-  
-    fetch('http://localhost:5678/api/works', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${authToken}`
-      },
-      body: formData
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(response.statusText);
-        }
-        return response.json();
+
+    // Vérifier si tous les champs sont remplis
+    if (form.checkValidity()) {
+      const image = post_input.files[0];
+      const title = ajoutez_photo_titre.value;
+      const category = ajoutez_photo_categorie.value;
+      const authToken = localStorage.getItem('token');
+
+      const formData = new FormData();
+      formData.append('image', image);
+      formData.append('title', title);
+      formData.append('category', category);
+
+      fetch('http://localhost:5678/api/works', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        },
+        body: formData
       })
-      .then(data => {
-        // Handle successful addition of the photo
-        console.log("Photo ajoutée avec succès :", data);
-        alert("Photo ajoutée avec succès");
-      })
-      .catch(error => {
-        // Handle error
-        console.error("Erreur lors de l'ajout de la photo :", error);
-      });
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(response.statusText);
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Handle successful addition of the photo
+          console.log("Photo ajoutée avec succès :", data);
+          alert("Photo ajoutée avec succès");
+        })
+        .catch(error => {
+          // Handle error
+          console.error("Erreur lors de l'ajout de la photo :", error);
+        });
+    } else {
+      // Afficher un message d'erreur indiquant les champs manquants
+      const errorMsg = document.createElement("p");
+      errorMsg.textContent = "Veuillez remplir tous les champs.";
+      errorMsg.classList.add("error-msg");
+      modale_menu_post_div.appendChild(errorMsg);
+    }
   });
 }

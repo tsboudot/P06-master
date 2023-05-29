@@ -291,6 +291,19 @@ button
 height: 60px;
 width: 60px;
 }
+form{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: center;
+}
+#ajoutez_photo_titre{
+	width: 75%;
+}
+#ajoutez_photo_categorie{
+	width: 65%;
+}
 .image-preview{
 	max-width: 100%;
 	max-height: 100%;

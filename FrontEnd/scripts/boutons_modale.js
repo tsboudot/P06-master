@@ -1,7 +1,7 @@
 import { edit_post } from './edit_post.js';
 import { edit_delete } from './edit_delete.js';
 import { fetchWorks } from './fetch_works.js';
-import { genererWorkModale } from './genererworks_modale.js'
+import { genererWorkModale } from './genererWorks_modale.js'
 
 export function genererBoutonsModaleMenueDelete() {
   const modal_back = document.querySelector(".modal-back");

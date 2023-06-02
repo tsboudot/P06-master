@@ -1,7 +1,7 @@
 import { genererBoutonsModaleMenuePost } from "./boutons_modale.js";
 import { checkInputs } from './check-input.js';
-import { fetchWorks } from "./fetch_works";
-import { genererWorks } from "./genererWorksGallery";
+import { genererWorks } from "./genererWorksGallery.js";
+import { fetchWorks } from "./fetch_works.js";
 
 export function edit_post() {
   const modale_titre = document.querySelector(".modale_titre");

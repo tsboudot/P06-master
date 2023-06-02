@@ -1,5 +1,5 @@
-import { fetchWorks } from "./fetch_works";
-import { genererWorks } from "./genererWorksGallery";
+import { fetchWorks } from "./fetch_works.js";
+import { genererWorks } from "./genererWorksGallery.js";
 
 export async function edit_delete(id) {
   const token = localStorage.getItem('token');

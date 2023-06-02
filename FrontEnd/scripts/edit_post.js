@@ -1,5 +1,7 @@
 import { genererBoutonsModaleMenuePost } from "./boutons_modale.js";
 import { checkInputs } from './check-input.js';
+import { fetchWorks } from "./fetch_works";
+import { genererWorks } from "./genererWorksGallery";
 
 export function edit_post() {
   const modale_titre = document.querySelector(".modale_titre");
@@ -139,6 +141,14 @@ export function edit_post() {
           // Handle successful addition of the photo
           console.log("Photo ajoutée avec succès :", data);
           alert("Photo ajoutée avec succès");
+          fetchWorks().then(data => {
+            works = data;
+            genererWorks(works);
+          })
+          .catch(error => {
+            // Handle error
+            console.error("Erreur lors de l'ajout de la photo :", error);
+          });
         })
         .catch(error => {
           // Handle error

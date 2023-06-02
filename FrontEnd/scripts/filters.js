@@ -9,7 +9,6 @@ export function filtrerTout() {
 }
 
 export function filtrerObjets() {
-  console.log(works);
   const worksFiltre = works.filter(function (work) {
     return work.category.name === "Objets";
   });
@@ -17,7 +16,6 @@ export function filtrerObjets() {
 }
 
 export function filtrerAppartements() {
-  console.log("bouya");
   const worksFiltre = works.filter(function (work) {
     return work.category.name === "Appartements";
   });
@@ -25,7 +23,6 @@ export function filtrerAppartements() {
 }
 
 export function filtrerHotelsEtRestaurants() {
-  console.log(works);
   const worksFiltre = works.filter(function (work) {
     return work.category.name === "Hotels & restaurants";
   });

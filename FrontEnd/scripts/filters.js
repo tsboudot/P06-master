@@ -52,11 +52,7 @@ export function genererFiltres() {
     button.element = filterButton;
 
     filterButton.addEventListener('click', () => {
-      filterButtons.forEach(button => {
-        button.element.classList.remove('active');
-      });
-
-      filterButton.classList.add('active');
+      
       button.action();
     });
   });

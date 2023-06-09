@@ -1,5 +1,6 @@
 import { fetchWorks } from "./fetch_works.js";
 import { genererWorks } from "./genererWorksGallery.js";
+import { genererWorkModale } from "./genererWorks_modale.js";
 
 export async function edit_delete(id) {
   const token = localStorage.getItem('token');
@@ -18,6 +19,7 @@ export async function edit_delete(id) {
       fetchWorks().then(data => {
         const works = data;
         genererWorks(works);
+        genererWorkModale();
       });
       return;
     }

@@ -16,6 +16,7 @@ export function genererWorks(works = []) {
       const gallery = document.createElement('div');
       gallery.classList.add('gallery');
   
+      
       works.forEach(work => {
         const workCard = document.createElement('figure');
         workCard.classList.add('work-card');

@@ -142,7 +142,7 @@ export function edit_post() {
           console.log("Photo ajoutée avec succès :", data);
           alert("Photo ajoutée avec succès");
           fetchWorks().then(data => {
-            works = data;
+            const works = data;
             genererWorks(works);
           })
           .catch(error => {
